@@ -7,13 +7,18 @@
 //
 
 #import "LCAppDelegate.h"
+#import "LCDatePickerViewController.h"
 
 @implementation LCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    LCDatePickerViewController *controller = [[LCDatePickerViewController alloc] initWithSelectedStartDate:nil endDate:nil delegate:nil];
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    self.window.rootViewController = controller;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

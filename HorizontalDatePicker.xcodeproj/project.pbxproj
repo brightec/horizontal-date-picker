@@ -19,6 +19,18 @@
 		7EC7265E1987B9C200E5A288 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC726461987B9C200E5A288 /* UIKit.framework */; };
 		7EC726661987B9C200E5A288 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EC726641987B9C200E5A288 /* InfoPlist.strings */; };
 		7EC726681987B9C200E5A288 /* HorizontalDatePickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC726671987B9C200E5A288 /* HorizontalDatePickerTests.m */; };
+		7EC726751987B9DD00E5A288 /* LCDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC726721987B9DD00E5A288 /* LCDatePickerViewController.m */; };
+		7EC726761987B9DD00E5A288 /* LCDatePickerViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EC726731987B9DD00E5A288 /* LCDatePickerViewController~iphone.xib */; };
+		7EC726771987B9DD00E5A288 /* LCDatePickerViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EC726741987B9DD00E5A288 /* LCDatePickerViewController~ipad.xib */; };
+		7EC726801987B9EF00E5A288 /* LCDatePickerDateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC726791987B9EF00E5A288 /* LCDatePickerDateCell.m */; };
+		7EC726811987B9EF00E5A288 /* LCDatePickerHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7267B1987B9EF00E5A288 /* LCDatePickerHeaderCell.m */; };
+		7EC726821987B9EF00E5A288 /* LCDatePickerCollectionViewLayoutVertical.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7267D1987B9EF00E5A288 /* LCDatePickerCollectionViewLayoutVertical.m */; };
+		7EC726831987B9EF00E5A288 /* LCDatePickerCollectionViewLayoutHorizontal.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7267F1987B9EF00E5A288 /* LCDatePickerCollectionViewLayoutHorizontal.m */; };
+		7EC7268C1987BADE00E5A288 /* UIColor+ColorWithHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC726891987BADE00E5A288 /* UIColor+ColorWithHex.m */; };
+		7EC7268D1987BADE00E5A288 /* UIColor+Lowcost.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7268B1987BADE00E5A288 /* UIColor+Lowcost.m */; };
+		7EC726901987BAE900E5A288 /* UIFont+Lowcost.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7268F1987BAE900E5A288 /* UIFont+Lowcost.m */; };
+		7EC726941987BB3100E5A288 /* UIView+autolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC726921987BB3100E5A288 /* UIView+autolayout.m */; };
+		7EC726971987DBFF00E5A288 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC726961987DBFF00E5A288 /* Reveal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +60,28 @@
 		7EC726631987B9C200E5A288 /* HorizontalDatePickerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HorizontalDatePickerTests-Info.plist"; sourceTree = "<group>"; };
 		7EC726651987B9C200E5A288 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7EC726671987B9C200E5A288 /* HorizontalDatePickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalDatePickerTests.m; sourceTree = "<group>"; };
+		7EC726711987B9DD00E5A288 /* LCDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDatePickerViewController.h; sourceTree = "<group>"; };
+		7EC726721987B9DD00E5A288 /* LCDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDatePickerViewController.m; sourceTree = "<group>"; };
+		7EC726731987B9DD00E5A288 /* LCDatePickerViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "LCDatePickerViewController~iphone.xib"; sourceTree = "<group>"; };
+		7EC726741987B9DD00E5A288 /* LCDatePickerViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "LCDatePickerViewController~ipad.xib"; sourceTree = "<group>"; };
+		7EC726781987B9EF00E5A288 /* LCDatePickerDateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDatePickerDateCell.h; sourceTree = "<group>"; };
+		7EC726791987B9EF00E5A288 /* LCDatePickerDateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDatePickerDateCell.m; sourceTree = "<group>"; };
+		7EC7267A1987B9EF00E5A288 /* LCDatePickerHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDatePickerHeaderCell.h; sourceTree = "<group>"; };
+		7EC7267B1987B9EF00E5A288 /* LCDatePickerHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDatePickerHeaderCell.m; sourceTree = "<group>"; };
+		7EC7267C1987B9EF00E5A288 /* LCDatePickerCollectionViewLayoutVertical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDatePickerCollectionViewLayoutVertical.h; sourceTree = "<group>"; };
+		7EC7267D1987B9EF00E5A288 /* LCDatePickerCollectionViewLayoutVertical.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDatePickerCollectionViewLayoutVertical.m; sourceTree = "<group>"; };
+		7EC7267E1987B9EF00E5A288 /* LCDatePickerCollectionViewLayoutHorizontal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDatePickerCollectionViewLayoutHorizontal.h; sourceTree = "<group>"; };
+		7EC7267F1987B9EF00E5A288 /* LCDatePickerCollectionViewLayoutHorizontal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDatePickerCollectionViewLayoutHorizontal.m; sourceTree = "<group>"; };
+		7EC726881987BADE00E5A288 /* UIColor+ColorWithHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorWithHex.h"; sourceTree = "<group>"; };
+		7EC726891987BADE00E5A288 /* UIColor+ColorWithHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorWithHex.m"; sourceTree = "<group>"; };
+		7EC7268A1987BADE00E5A288 /* UIColor+Lowcost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Lowcost.h"; sourceTree = "<group>"; };
+		7EC7268B1987BADE00E5A288 /* UIColor+Lowcost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Lowcost.m"; sourceTree = "<group>"; };
+		7EC7268E1987BAE900E5A288 /* UIFont+Lowcost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Lowcost.h"; sourceTree = "<group>"; };
+		7EC7268F1987BAE900E5A288 /* UIFont+Lowcost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Lowcost.m"; sourceTree = "<group>"; };
+		7EC726911987BB3100E5A288 /* UIView+autolayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+autolayout.h"; sourceTree = "<group>"; };
+		7EC726921987BB3100E5A288 /* UIView+autolayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+autolayout.m"; sourceTree = "<group>"; };
+		7EC726931987BB3100E5A288 /* UIWindow+AutoLayoutDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+AutoLayoutDebug.h"; sourceTree = "<group>"; };
+		7EC726961987DBFF00E5A288 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = "../../../../../../Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/Reveal.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +90,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EC726451987B9C200E5A288 /* CoreGraphics.framework in Frameworks */,
+				7EC726971987DBFF00E5A288 /* Reveal.framework in Frameworks */,
 				7EC726471987B9C200E5A288 /* UIKit.framework in Frameworks */,
 				7EC726431987B9C200E5A288 /* Foundation.framework in Frameworks */,
 			);
@@ -96,6 +131,7 @@
 		7EC726411987B9C200E5A288 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7EC726961987DBFF00E5A288 /* Reveal.framework */,
 				7EC726421987B9C200E5A288 /* Foundation.framework */,
 				7EC726441987B9C200E5A288 /* CoreGraphics.framework */,
 				7EC726461987B9C200E5A288 /* UIKit.framework */,
@@ -107,6 +143,8 @@
 		7EC726481987B9C200E5A288 /* HorizontalDatePicker */ = {
 			isa = PBXGroup;
 			children = (
+				7EC726871987BAC100E5A288 /* Categories */,
+				7EC726851987BA0000E5A288 /* Controller */,
 				7EC726511987B9C200E5A288 /* LCAppDelegate.h */,
 				7EC726521987B9C200E5A288 /* LCAppDelegate.m */,
 				7EC726541987B9C200E5A288 /* Images.xcassets */,
@@ -142,6 +180,49 @@
 				7EC726641987B9C200E5A288 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7EC726841987B9F600E5A288 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7EC726781987B9EF00E5A288 /* LCDatePickerDateCell.h */,
+				7EC726791987B9EF00E5A288 /* LCDatePickerDateCell.m */,
+				7EC7267A1987B9EF00E5A288 /* LCDatePickerHeaderCell.h */,
+				7EC7267B1987B9EF00E5A288 /* LCDatePickerHeaderCell.m */,
+				7EC7267C1987B9EF00E5A288 /* LCDatePickerCollectionViewLayoutVertical.h */,
+				7EC7267D1987B9EF00E5A288 /* LCDatePickerCollectionViewLayoutVertical.m */,
+				7EC7267E1987B9EF00E5A288 /* LCDatePickerCollectionViewLayoutHorizontal.h */,
+				7EC7267F1987B9EF00E5A288 /* LCDatePickerCollectionViewLayoutHorizontal.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		7EC726851987BA0000E5A288 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7EC726841987B9F600E5A288 /* Views */,
+				7EC726711987B9DD00E5A288 /* LCDatePickerViewController.h */,
+				7EC726721987B9DD00E5A288 /* LCDatePickerViewController.m */,
+				7EC726731987B9DD00E5A288 /* LCDatePickerViewController~iphone.xib */,
+				7EC726741987B9DD00E5A288 /* LCDatePickerViewController~ipad.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		7EC726871987BAC100E5A288 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				7EC726911987BB3100E5A288 /* UIView+autolayout.h */,
+				7EC726921987BB3100E5A288 /* UIView+autolayout.m */,
+				7EC726931987BB3100E5A288 /* UIWindow+AutoLayoutDebug.h */,
+				7EC7268E1987BAE900E5A288 /* UIFont+Lowcost.h */,
+				7EC7268F1987BAE900E5A288 /* UIFont+Lowcost.m */,
+				7EC726881987BADE00E5A288 /* UIColor+ColorWithHex.h */,
+				7EC726891987BADE00E5A288 /* UIColor+ColorWithHex.m */,
+				7EC7268A1987BADE00E5A288 /* UIColor+Lowcost.h */,
+				7EC7268B1987BADE00E5A288 /* UIColor+Lowcost.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +302,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EC7264D1987B9C200E5A288 /* InfoPlist.strings in Resources */,
+				7EC726761987B9DD00E5A288 /* LCDatePickerViewController~iphone.xib in Resources */,
+				7EC726771987B9DD00E5A288 /* LCDatePickerViewController~ipad.xib in Resources */,
 				7EC726551987B9C200E5A288 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,8 +323,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EC726751987B9DD00E5A288 /* LCDatePickerViewController.m in Sources */,
+				7EC7268C1987BADE00E5A288 /* UIColor+ColorWithHex.m in Sources */,
 				7EC7264F1987B9C200E5A288 /* main.m in Sources */,
+				7EC7268D1987BADE00E5A288 /* UIColor+Lowcost.m in Sources */,
+				7EC726941987BB3100E5A288 /* UIView+autolayout.m in Sources */,
+				7EC726801987B9EF00E5A288 /* LCDatePickerDateCell.m in Sources */,
+				7EC726821987B9EF00E5A288 /* LCDatePickerCollectionViewLayoutVertical.m in Sources */,
+				7EC726831987B9EF00E5A288 /* LCDatePickerCollectionViewLayoutHorizontal.m in Sources */,
 				7EC726531987B9C200E5A288 /* LCAppDelegate.m in Sources */,
+				7EC726901987BAE900E5A288 /* UIFont+Lowcost.m in Sources */,
+				7EC726811987B9EF00E5A288 /* LCDatePickerHeaderCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,10 +452,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Reveal.app/Contents/SharedSupport/iOS-Libraries",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HorizontalDatePicker/HorizontalDatePicker-Prefix.pch";
 				INFOPLIST_FILE = "HorizontalDatePicker/HorizontalDatePicker-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -373,10 +475,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Reveal.app/Contents/SharedSupport/iOS-Libraries",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HorizontalDatePicker/HorizontalDatePicker-Prefix.pch";
 				INFOPLIST_FILE = "HorizontalDatePicker/HorizontalDatePicker-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -440,6 +552,7 @@
 				7EC7266D1987B9C200E5A288 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7EC7266E1987B9C200E5A288 /* Build configuration list for PBXNativeTarget "HorizontalDatePickerTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +561,7 @@
 				7EC726701987B9C200E5A288 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
