@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7EC726431987B9C200E5A288 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC726421987B9C200E5A288 /* Foundation.framework */; };
+		7EC726451987B9C200E5A288 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC726441987B9C200E5A288 /* CoreGraphics.framework */; };
+		7EC726471987B9C200E5A288 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC726461987B9C200E5A288 /* UIKit.framework */; };
+		7EC7264D1987B9C200E5A288 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EC7264B1987B9C200E5A288 /* InfoPlist.strings */; };
+		7EC7264F1987B9C200E5A288 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC7264E1987B9C200E5A288 /* main.m */; };
+		7EC726531987B9C200E5A288 /* LCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC726521987B9C200E5A288 /* LCAppDelegate.m */; };
+		7EC726551987B9C200E5A288 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EC726541987B9C200E5A288 /* Images.xcassets */; };
+		7EC7265C1987B9C200E5A288 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC7265B1987B9C200E5A288 /* XCTest.framework */; };
+		7EC7265D1987B9C200E5A288 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC726421987B9C200E5A288 /* Foundation.framework */; };
+		7EC7265E1987B9C200E5A288 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC726461987B9C200E5A288 /* UIKit.framework */; };
+		7EC726661987B9C200E5A288 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EC726641987B9C200E5A288 /* InfoPlist.strings */; };
+		7EC726681987B9C200E5A288 /* HorizontalDatePickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC726671987B9C200E5A288 /* HorizontalDatePickerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7EC7265F1987B9C200E5A288 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EC726371987B9C200E5A288 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7EC7263E1987B9C200E5A288;
+			remoteInfo = HorizontalDatePicker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7EC7263F1987B9C200E5A288 /* HorizontalDatePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HorizontalDatePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EC726421987B9C200E5A288 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7EC726441987B9C200E5A288 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7EC726461987B9C200E5A288 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7EC7264A1987B9C200E5A288 /* HorizontalDatePicker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HorizontalDatePicker-Info.plist"; sourceTree = "<group>"; };
+		7EC7264C1987B9C200E5A288 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7EC7264E1987B9C200E5A288 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7EC726501987B9C200E5A288 /* HorizontalDatePicker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HorizontalDatePicker-Prefix.pch"; sourceTree = "<group>"; };
+		7EC726511987B9C200E5A288 /* LCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCAppDelegate.h; sourceTree = "<group>"; };
+		7EC726521987B9C200E5A288 /* LCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCAppDelegate.m; sourceTree = "<group>"; };
+		7EC726541987B9C200E5A288 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7EC7265A1987B9C200E5A288 /* HorizontalDatePickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HorizontalDatePickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EC7265B1987B9C200E5A288 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7EC726631987B9C200E5A288 /* HorizontalDatePickerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HorizontalDatePickerTests-Info.plist"; sourceTree = "<group>"; };
+		7EC726651987B9C200E5A288 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7EC726671987B9C200E5A288 /* HorizontalDatePickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalDatePickerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7EC7263C1987B9C200E5A288 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EC726451987B9C200E5A288 /* CoreGraphics.framework in Frameworks */,
+				7EC726471987B9C200E5A288 /* UIKit.framework in Frameworks */,
+				7EC726431987B9C200E5A288 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EC726571987B9C200E5A288 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EC7265C1987B9C200E5A288 /* XCTest.framework in Frameworks */,
+				7EC7265E1987B9C200E5A288 /* UIKit.framework in Frameworks */,
+				7EC7265D1987B9C200E5A288 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7EC726361987B9C200E5A288 = {
+			isa = PBXGroup;
+			children = (
+				7EC726481987B9C200E5A288 /* HorizontalDatePicker */,
+				7EC726611987B9C200E5A288 /* HorizontalDatePickerTests */,
+				7EC726411987B9C200E5A288 /* Frameworks */,
+				7EC726401987B9C200E5A288 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7EC726401987B9C200E5A288 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7EC7263F1987B9C200E5A288 /* HorizontalDatePicker.app */,
+				7EC7265A1987B9C200E5A288 /* HorizontalDatePickerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7EC726411987B9C200E5A288 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7EC726421987B9C200E5A288 /* Foundation.framework */,
+				7EC726441987B9C200E5A288 /* CoreGraphics.framework */,
+				7EC726461987B9C200E5A288 /* UIKit.framework */,
+				7EC7265B1987B9C200E5A288 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7EC726481987B9C200E5A288 /* HorizontalDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				7EC726511987B9C200E5A288 /* LCAppDelegate.h */,
+				7EC726521987B9C200E5A288 /* LCAppDelegate.m */,
+				7EC726541987B9C200E5A288 /* Images.xcassets */,
+				7EC726491987B9C200E5A288 /* Supporting Files */,
+			);
+			path = HorizontalDatePicker;
+			sourceTree = "<group>";
+		};
+		7EC726491987B9C200E5A288 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7EC7264A1987B9C200E5A288 /* HorizontalDatePicker-Info.plist */,
+				7EC7264B1987B9C200E5A288 /* InfoPlist.strings */,
+				7EC7264E1987B9C200E5A288 /* main.m */,
+				7EC726501987B9C200E5A288 /* HorizontalDatePicker-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7EC726611987B9C200E5A288 /* HorizontalDatePickerTests */ = {
+			isa = PBXGroup;
+			children = (
+				7EC726671987B9C200E5A288 /* HorizontalDatePickerTests.m */,
+				7EC726621987B9C200E5A288 /* Supporting Files */,
+			);
+			path = HorizontalDatePickerTests;
+			sourceTree = "<group>";
+		};
+		7EC726621987B9C200E5A288 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7EC726631987B9C200E5A288 /* HorizontalDatePickerTests-Info.plist */,
+				7EC726641987B9C200E5A288 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7EC7263E1987B9C200E5A288 /* HorizontalDatePicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EC7266B1987B9C200E5A288 /* Build configuration list for PBXNativeTarget "HorizontalDatePicker" */;
+			buildPhases = (
+				7EC7263B1987B9C200E5A288 /* Sources */,
+				7EC7263C1987B9C200E5A288 /* Frameworks */,
+				7EC7263D1987B9C200E5A288 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HorizontalDatePicker;
+			productName = HorizontalDatePicker;
+			productReference = 7EC7263F1987B9C200E5A288 /* HorizontalDatePicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7EC726591987B9C200E5A288 /* HorizontalDatePickerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EC7266E1987B9C200E5A288 /* Build configuration list for PBXNativeTarget "HorizontalDatePickerTests" */;
+			buildPhases = (
+				7EC726561987B9C200E5A288 /* Sources */,
+				7EC726571987B9C200E5A288 /* Frameworks */,
+				7EC726581987B9C200E5A288 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7EC726601987B9C200E5A288 /* PBXTargetDependency */,
+			);
+			name = HorizontalDatePickerTests;
+			productName = HorizontalDatePickerTests;
+			productReference = 7EC7265A1987B9C200E5A288 /* HorizontalDatePickerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7EC726371987B9C200E5A288 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LC;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Brightec Ltd";
+				TargetAttributes = {
+					7EC726591987B9C200E5A288 = {
+						TestTargetID = 7EC7263E1987B9C200E5A288;
+					};
+				};
+			};
+			buildConfigurationList = 7EC7263A1987B9C200E5A288 /* Build configuration list for PBXProject "HorizontalDatePicker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7EC726361987B9C200E5A288;
+			productRefGroup = 7EC726401987B9C200E5A288 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7EC7263E1987B9C200E5A288 /* HorizontalDatePicker */,
+				7EC726591987B9C200E5A288 /* HorizontalDatePickerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7EC7263D1987B9C200E5A288 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EC7264D1987B9C200E5A288 /* InfoPlist.strings in Resources */,
+				7EC726551987B9C200E5A288 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EC726581987B9C200E5A288 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EC726661987B9C200E5A288 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7EC7263B1987B9C200E5A288 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EC7264F1987B9C200E5A288 /* main.m in Sources */,
+				7EC726531987B9C200E5A288 /* LCAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EC726561987B9C200E5A288 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EC726681987B9C200E5A288 /* HorizontalDatePickerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7EC726601987B9C200E5A288 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7EC7263E1987B9C200E5A288 /* HorizontalDatePicker */;
+			targetProxy = 7EC7265F1987B9C200E5A288 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7EC7264B1987B9C200E5A288 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7EC7264C1987B9C200E5A288 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7EC726641987B9C200E5A288 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7EC726651987B9C200E5A288 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7EC726691987B9C200E5A288 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		7EC7266A1987B9C200E5A288 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7EC7266C1987B9C200E5A288 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HorizontalDatePicker/HorizontalDatePicker-Prefix.pch";
+				INFOPLIST_FILE = "HorizontalDatePicker/HorizontalDatePicker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7EC7266D1987B9C200E5A288 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HorizontalDatePicker/HorizontalDatePicker-Prefix.pch";
+				INFOPLIST_FILE = "HorizontalDatePicker/HorizontalDatePicker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7EC7266F1987B9C200E5A288 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HorizontalDatePicker.app/HorizontalDatePicker";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HorizontalDatePicker/HorizontalDatePicker-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "HorizontalDatePickerTests/HorizontalDatePickerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7EC726701987B9C200E5A288 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HorizontalDatePicker.app/HorizontalDatePicker";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HorizontalDatePicker/HorizontalDatePicker-Prefix.pch";
+				INFOPLIST_FILE = "HorizontalDatePickerTests/HorizontalDatePickerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7EC7263A1987B9C200E5A288 /* Build configuration list for PBXProject "HorizontalDatePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EC726691987B9C200E5A288 /* Debug */,
+				7EC7266A1987B9C200E5A288 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7EC7266B1987B9C200E5A288 /* Build configuration list for PBXNativeTarget "HorizontalDatePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EC7266C1987B9C200E5A288 /* Debug */,
+				7EC7266D1987B9C200E5A288 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7EC7266E1987B9C200E5A288 /* Build configuration list for PBXNativeTarget "HorizontalDatePickerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EC7266F1987B9C200E5A288 /* Debug */,
+				7EC726701987B9C200E5A288 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7EC726371987B9C200E5A288 /* Project object */;
+}
