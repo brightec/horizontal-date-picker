@@ -9,14 +9,18 @@
 #import "LCDatePickerCollectionViewLayoutHorizontal.h"
 
 
-static CGFloat const LCMinInterItemSpacing = 0;
-static CGFloat const LCMinLineSpacing = 0;
-static CGFloat const LCInsetTop = 0;
-static CGFloat const LCInsetLeft = 0;
-static CGFloat const LCInsetBottom = 0;
-static CGFloat const LCInsetRight = 0;
 static CGFloat const LCHeaderHeight = 60.0f;
-static CGFloat const LCItemSize = 87.0f;
+static CGFloat const LCItemSize = 44.0f;
+
+
+NSString *const LCDatePickerCollectionViewElementKindCell = @"LCDatePickerCollectionViewElementKindCell";
+NSString *const LCDatePickerCollectionViewElementKindSectionHeader = @"LCDatePickerCollectionViewElementKindSectionHeader";
+
+
+@interface LCDatePickerCollectionViewLayoutHorizontal ()
+@property (nonatomic) NSMutableDictionary *layoutInformation;
+@property (nonatomic) NSInteger numberOfColumns;
+@end
 
 
 @implementation LCDatePickerCollectionViewLayoutHorizontal
@@ -26,65 +30,108 @@ static CGFloat const LCItemSize = 87.0f;
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        
-        self.minimumInteritemSpacing = LCMinInterItemSpacing;
-        self.minimumLineSpacing = LCMinLineSpacing;
-        self.sectionInset = UIEdgeInsetsMake(LCInsetTop, LCInsetLeft, LCInsetBottom, LCInsetRight);
-        self.headerReferenceSize = CGSizeMake(LCHeaderHeight, 0);
-        self.itemSize = CGSizeMake(LCItemSize, LCItemSize);
+        _layoutInformation = [@[] mutableCopy];
+        _numberOfColumns = 7;
     }
     
     return self;
 }
 
 
+- (CGSize)collectionViewContentSize
+{
+    CGFloat width = self.collectionView.numberOfSections * self.collectionView.bounds.size.width;
+    CGFloat height = self.collectionView.bounds.size.height;
+    CGSize contentSize = CGSizeMake(width, height);
+    return contentSize;
+}
+
+
+- (void)prepareLayout
+{
+    NSMutableDictionary *cellInformation = [@{} mutableCopy];
+    NSMutableDictionary *headerInformation = [@{} mutableCopy];
+    NSMutableDictionary *layoutInformation = [@{} mutableCopy];
+    
+    NSIndexPath *indexPath;
+    NSInteger numSections = [self.collectionView numberOfSections];
+    for(NSInteger section = 0; section < numSections; section++) {
+        NSInteger numItems = [self.collectionView numberOfItemsInSection:section];
+        for(NSInteger item = 0; item < numItems; item++) {
+            indexPath = [NSIndexPath indexPathForItem:item inSection:section];
+            
+            UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
+            attributes.frame = [self frameForCellAtIndexPath:indexPath];
+            [cellInformation setObject:attributes forKey:indexPath];
+        }
+        
+        // section header
+        UICollectionViewLayoutAttributes *headerAttrbutes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:LCDatePickerCollectionViewElementKindSectionHeader withIndexPath:indexPath];
+        headerAttrbutes.frame = [self frameForSupplementaryViewOfKind:LCDatePickerCollectionViewElementKindSectionHeader atIndexPath:indexPath];
+        [headerInformation setObject:headerAttrbutes forKey:[NSIndexPath indexPathForRow:0 inSection:section]];
+    }
+    
+    [layoutInformation setObject:cellInformation forKey:LCDatePickerCollectionViewElementKindCell];
+    [layoutInformation setObject:headerInformation forKey:LCDatePickerCollectionViewElementKindSectionHeader];
+    self.layoutInformation = layoutInformation;
+}
+
+
+- (CGRect)frameForCellAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger row = indexPath.row / self.numberOfColumns;
+    NSInteger column = indexPath.row % self.numberOfColumns;
+    
+    CGFloat w = LCItemSize;
+    CGFloat h = LCItemSize;
+    CGFloat x = column * w;
+    x = x + (indexPath.section * (self.collectionView.bounds.size.width / 2));
+    CGFloat y = LCHeaderHeight + (row * h);
+    
+    CGRect frame = CGRectMake(x, y, w, h);
+    return frame;
+}
+
+
+- (CGRect)frameForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    CGRect frame;
+    if (kind == LCDatePickerCollectionViewElementKindSectionHeader) {
+        frame.size = CGSizeMake(self.collectionView.bounds.size.width, LCHeaderHeight);
+        frame.origin.x = indexPath.section * CGRectGetWidth(frame);
+        frame.origin.y = 0;
+    }
+    return frame;
+}
+
+
+- (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return self.layoutInformation[LCDatePickerCollectionViewElementKindCell][indexPath];
+}
+
+
+- (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    return self.layoutInformation[kind][indexPath];
+}
+
+
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect
 {
-    NSArray *attributes = [super layoutAttributesForElementsInRect:rect];
-
-    CGFloat x;
-    CGFloat y;
-    NSInteger columnCounter = 0;
-    NSInteger rowCounter = 0;
-    NSInteger section = 0;
-    for (UICollectionViewLayoutAttributes *attribute in attributes) {
-        
-        if (attribute.representedElementCategory == UICollectionElementCategoryCell) {
-
-            // if new section then reset row back to zero
-            if (attribute.indexPath.section != section) {
-                section = attribute.indexPath.section;
-                rowCounter = 0;
+    NSMutableArray *layoutAttributes = [NSMutableArray arrayWithCapacity:self.layoutInformation.count];
+    
+    for(NSString *key in self.layoutInformation) {
+        NSDictionary *attributesDict = self.layoutInformation[key];
+        for(NSIndexPath *indexPath in attributesDict) {
+            UICollectionViewLayoutAttributes *attributes = attributesDict[indexPath];
+            if(CGRectIntersectsRect(rect, attributes.frame)){
+                [layoutAttributes addObject:attributes];
             }
-            
-            CGFloat w = self.itemSize.width;
-            CGFloat h = self.itemSize.height;
-            x = columnCounter * w;
-            x = x + (section * self.collectionView.bounds.size.width);
-            y = rowCounter * h;
-            
-            CGRect frame = CGRectMake(x, y, w, h);
-            attribute.frame = frame;
-            
-            NSLog(@"Row=%li Col=%li x=%f y=%f section=%li", (long)rowCounter, (long)columnCounter, x, y, (long)section);
-            
-            // if next column is 7 i.e. Sat move to new row
-            columnCounter++;
-            if (columnCounter == 7) {
-                rowCounter++;
-                columnCounter = 0;
-            }
-            
-        } else if (attribute.representedElementCategory == UICollectionElementCategorySupplementaryView) {
-            CGRect frame = attribute.frame;
-            frame.origin.x = 0;
-            frame.origin.y = 0;
-            attribute.frame = frame;
         }
     }
     
-    return attributes;
+    return layoutAttributes;
 }
 
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>94675B21-FC33-4522-AF02-03F3ED0AA8E0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HorizontalDatePicker</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EB597924-8D90-4064-B852-04968C544715</key>
+		<string>ssh://github.com/brightec/horizontal-date-picker.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HorizontalDatePicker.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EB597924-8D90-4064-B852-04968C544715</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/brightec/horizontal-date-picker.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EB597924-8D90-4064-B852-04968C544715</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EB597924-8D90-4064-B852-04968C544715</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HorizontalDatePicker</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -77,6 +77,13 @@
 }
 
 
+- (void)prepareForReuse
+{
+    [super prepareForReuse];
+    self.layer.contents = nil;
+}
+
+
 /*Task-**: Set actual date value (day) into date lable. */
 - (void)setDate:(NSDate *)date calendar:(NSCalendar *)calendar
 {
@@ -121,7 +128,8 @@
 {
     [self setSelected:true];
 
-    self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"first-date-selected"]];
+//    self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"first-date-selected"]];
+    self.layer.contents = (__bridge id)[UIImage imageNamed:@"first-date-selected"].CGImage;
     self.dateLb.textColor = self.firstLastDateTextColor;
     self.dateLb.font = self.firstLastDateFont;
 
@@ -133,6 +141,7 @@
     self.dateLb.textColor = self.disabledTextColor;
     self.dateLb.font = self.defaultFont;
     self.backgroundColor = self.defaultBackgroundColor;
+    self.layer.contents = nil;
 }
 
 
@@ -141,6 +150,7 @@
     self.dateLb.textColor = self.defaultTextColor;
     self.dateLb.font = self.defaultFont;
     self.backgroundColor = self.defaultBackgroundColor;
+    self.layer.contents = nil;
 }
 
 
@@ -149,7 +159,8 @@
 {
     [self setSelected:true];
 
-    self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"last-date-selected"]];
+//    self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"last-date-selected"]];
+    self.layer.contents = (__bridge id)[UIImage imageNamed:@"last-date-selected"].CGImage;
     self.dateLb.textColor = self.firstLastDateTextColor;
     self.dateLb.font = self.firstLastDateFont;
 }
@@ -163,6 +174,7 @@
     self.backgroundColor = self.defaultBackgroundColor;
     self.dateLb.textColor = self.defaultTextColor;
     self.dateLb.font = self.defaultFont;
+    self.layer.contents = nil;
 }
 
 
@@ -181,6 +193,7 @@
     self.backgroundColor = self.defaultBackgroundColor;
     self.dateLb.textColor = self.defaultTextColor;
     self.dateLb.font = self.defaultFont;
+    self.layer.contents = nil;;
 }
 
 
@@ -191,6 +204,7 @@
 
     self.dateLb.font = self.todayFont;
     self.backgroundColor = self.defaultBackgroundColor;
+    self.layer.contents = nil;
 }
 
 @end

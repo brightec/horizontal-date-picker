@@ -14,6 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     LCDatePickerViewController *controller = [[LCDatePickerViewController alloc] initWithSelectedStartDate:nil endDate:nil delegate:nil];
+    controller.lowerBoundDate = [NSDate date];
     
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

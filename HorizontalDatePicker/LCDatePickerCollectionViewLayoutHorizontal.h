@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 
-@interface LCDatePickerCollectionViewLayoutHorizontal : UICollectionViewFlowLayout
+extern NSString *const LCDatePickerCollectionViewElementKindSectionHeader;
+
+
+@interface LCDatePickerCollectionViewLayoutHorizontal : UICollectionViewLayout
 @end

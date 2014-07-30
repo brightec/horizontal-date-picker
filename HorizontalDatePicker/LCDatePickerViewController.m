@@ -21,6 +21,7 @@ typedef struct {
 #import "LCDatePickerDateCell.h"
 #import "LCDatePickerHeaderCell.h"
 #import "LCDatePickerCollectionViewLayoutVertical.h"
+#import "LCDatePickerCollectionViewLayoutHorizontal.h"
 
 
 static NSString *calendarCellID = @"myCell";
@@ -90,7 +91,11 @@ static NSString *calenderHeaderCellID = @"sectionHeader";
     [self.collectionView registerClass:[LCDatePickerDateCell class] forCellWithReuseIdentifier:calendarCellID];
 
     // Register the cell header which we customized
-    [self.collectionView registerClass:[LCDatePickerHeaderCell class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:calenderHeaderCellID];
+    if ([self.collectionView.collectionViewLayout isKindOfClass:[LCDatePickerCollectionViewLayoutHorizontal class]]) {
+        [self.collectionView registerClass:[LCDatePickerHeaderCell class] forSupplementaryViewOfKind:LCDatePickerCollectionViewElementKindSectionHeader withReuseIdentifier:calenderHeaderCellID];
+    } else {
+        [self.collectionView registerClass:[LCDatePickerHeaderCell class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:calenderHeaderCellID];
+    }
 
     // Add border radius to button
     self.todayButton.layer.cornerRadius = 10;
@@ -718,8 +723,8 @@ static NSString *calenderHeaderCellID = @"sectionHeader";
  addition of the section. It will replace the month text into the header cell.*/
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-    if (kind == UICollectionElementKindSectionHeader) {
-        LCDatePickerHeaderCell *headerView = [self.collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+    if (kind == UICollectionElementKindSectionHeader || kind == LCDatePickerCollectionViewElementKindSectionHeader) {
+        LCDatePickerHeaderCell *headerView = [self.collectionView dequeueReusableSupplementaryViewOfKind:kind
                                                                                      withReuseIdentifier:calenderHeaderCellID
                                                                                             forIndexPath:indexPath];
 
