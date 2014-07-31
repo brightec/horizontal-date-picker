@@ -107,29 +107,29 @@ static NSString *calenderHeaderCellID = @"sectionHeader";
 }
 
 
-//- (void)viewWillAppear:(BOOL)animated
-//{
-//    [super viewWillAppear:animated];
-//    
-//    NSDate *date = self.firstSelectedDate ? self.firstSelectedDate : [NSDate date];
-//    NSIndexPath *indexPath = [self indexPathForCellAtDate:date];
-//    [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredVertically animated:NO];
-//    
-//    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-//        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
-//    }
-//}
-//
-//
-//- (void)viewDidAppear:(BOOL)animated
-//{
-//    [super viewDidAppear:animated];
-//
-//    if (self.firstSelectedDate) {
-//        [self scrollToDate:self.firstSelectedDate animated:YES];
-//        [self performSelector:@selector(updateTodayButton) withObject:nil afterDelay:1.0];
-//    }
-//}
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    NSDate *date = self.firstSelectedDate ? self.firstSelectedDate : [NSDate date];
+    NSIndexPath *indexPath = [self indexPathForCellAtDate:date];
+    [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredVertically animated:NO];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    }
+}
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    if (self.firstSelectedDate) {
+        [self scrollToDate:self.firstSelectedDate animated:YES];
+        [self performSelector:@selector(updateTodayButton) withObject:nil afterDelay:1.0];
+    }
+}
 
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -237,26 +237,35 @@ static NSString *calenderHeaderCellID = @"sectionHeader";
 
 
 // Generic method to jump/scroll to date
-//- (void)scrollToDate:(NSDate *)date animated:(BOOL)animated
-//{
-//    @try {
-//        NSIndexPath *selectedDateIndexPath = [self indexPathForCellAtDate:date];
-//
-//        if (! [[self.collectionView indexPathsForVisibleItems] containsObject:selectedDateIndexPath]) {
-//            NSIndexPath *sectionIndexPath = [NSIndexPath indexPathForItem:0 inSection:selectedDateIndexPath.section];
-//            UICollectionViewLayoutAttributes *sectionLayoutAttributes = [self.collectionView layoutAttributesForItemAtIndexPath:sectionIndexPath];
-//            CGPoint origin = sectionLayoutAttributes.frame.origin;
-//            origin.x = 0;
-//            origin.y -= (70.0f + 5.0f + self.collectionView.contentInset.top);
-//            [self.collectionView setContentOffset:origin animated:animated];
-//        }
-//    } @catch (NSException *exception) {
-//        //Exception occurred (it should not according to the documentation, but in reality...) let's scroll to the IndexPath then
-//        NSInteger section = [self sectionForDate:date];
-//        NSIndexPath *sectionIndexPath = [NSIndexPath indexPathForItem:0 inSection:section];
-//        [self.collectionView scrollToItemAtIndexPath:sectionIndexPath atScrollPosition:UICollectionViewScrollPositionTop animated:animated];
-//    }
-//}
+- (void)scrollToDate:(NSDate *)date animated:(BOOL)animated
+{
+    @try {
+        NSIndexPath *selectedDateIndexPath = [self indexPathForCellAtDate:date];
+
+        if (! [[self.collectionView indexPathsForVisibleItems] containsObject:selectedDateIndexPath]) {
+            NSIndexPath *sectionIndexPath = [NSIndexPath indexPathForItem:0 inSection:selectedDateIndexPath.section];
+            UICollectionViewLayoutAttributes *sectionLayoutAttributes = [self.collectionView layoutAttributesForItemAtIndexPath:sectionIndexPath];
+            CGPoint origin = sectionLayoutAttributes.frame.origin;
+            
+            if ([self.collectionView.collectionViewLayout isKindOfClass:[LCDatePickerCollectionViewLayoutHorizontal class]]) {
+                // horizontal
+                origin.x -= 20.0f;
+                origin.y = 0;
+            } else {
+                // vertical
+                origin.x = 0;
+                origin.y -= (70.0f + 5.0f + self.collectionView.contentInset.top);
+            }
+            
+            [self.collectionView setContentOffset:origin animated:animated];
+        }
+    } @catch (NSException *exception) {
+        //Exception occurred (it should not according to the documentation, but in reality...) let's scroll to the IndexPath then
+        NSInteger section = [self sectionForDate:date];
+        NSIndexPath *sectionIndexPath = [NSIndexPath indexPathForItem:0 inSection:section];
+        [self.collectionView scrollToItemAtIndexPath:sectionIndexPath atScrollPosition:UICollectionViewScrollPositionTop animated:animated];
+    }
+}
 
 
 - (void)updateUIState
@@ -291,20 +300,20 @@ static NSString *calenderHeaderCellID = @"sectionHeader";
 
 - (IBAction)scrollToToday:(id)sender
 {
-//    self.firstDateOfUpperBound = nil;
-//    self.lastDateOfLowerBound = nil;
-//    [self.collectionView reloadData];
-//    [self scrollToDate:[NSDate date] animated:YES];
-//    [self performSelector:@selector(hideTodayButton) withObject:nil afterDelay:1.0];
-//    [self performSelector:@selector(updateSelectedDatesButton) withObject:nil afterDelay:1.0];
+    self.firstDateOfUpperBound = nil;
+    self.lastDateOfLowerBound = nil;
+    [self.collectionView reloadData];
+    [self scrollToDate:[NSDate date] animated:YES];
+    [self performSelector:@selector(hideTodayButton) withObject:nil afterDelay:1.0];
+    [self performSelector:@selector(updateSelectedDatesButton) withObject:nil afterDelay:1.0];
 }
 
 
 - (IBAction)selectedDatesButtonWasTouched:(UIButton *)sender
 {
-//    [self scrollToDate:self.firstSelectedDate animated:YES];
-//    [self performSelector:@selector(hideSelectedDatesButton) withObject:nil afterDelay:1.0];
-//    [self performSelector:@selector(updateTodayButton) withObject:nil afterDelay:1.0];
+    [self scrollToDate:self.firstSelectedDate animated:YES];
+    [self performSelector:@selector(hideSelectedDatesButton) withObject:nil afterDelay:1.0];
+    [self performSelector:@selector(updateTodayButton) withObject:nil afterDelay:1.0];
 }
 
 
@@ -382,7 +391,7 @@ static NSString *calenderHeaderCellID = @"sectionHeader";
             NSDateComponents *components = [NSDateComponents new];
             components.year = 6;
             return components;
-        })())                                                                                   toDate:now options:0]];
+        })()) toDate:now options:0]];
 
         [self setLastDateOfLowerBound:[self dateFromPickerDate:lastDate]];
     }
@@ -554,7 +563,6 @@ static NSString *calenderHeaderCellID = @"sectionHeader";
 
 - (void)appendPastDates
 {
-
     [self shiftDatesByComponents:((^{
         NSDateComponents *dateComponents = [NSDateComponents new];
         dateComponents.year = - 6;
@@ -566,7 +574,6 @@ static NSString *calenderHeaderCellID = @"sectionHeader";
 
 - (void)appendFutureDates
 {
-
     [self shiftDatesByComponents:((^{
         NSDateComponents *dateComponents = [NSDateComponents new];
         dateComponents.year = 6;
@@ -579,7 +586,7 @@ static NSString *calenderHeaderCellID = @"sectionHeader";
 - (void)shiftDatesByComponents:(NSDateComponents *)components
 {
     UICollectionView *cv = self.collectionView;
-    UICollectionViewFlowLayout *cvLayout = (UICollectionViewFlowLayout *) self.collectionView.collectionViewLayout;
+    UICollectionViewLayout *cvLayout = self.collectionView.collectionViewLayout;
 
     NSArray *visibleCells = [self.collectionView visibleCells];
     if (! [visibleCells count])
@@ -596,26 +603,29 @@ static NSString *calenderHeaderCellID = @"sectionHeader";
 
     [cv reloadData];
     [cvLayout invalidateLayout];
-    [cvLayout prepareLayout];
+//    [cvLayout prepareLayout];
 
     NSInteger toSection = [self.calendar components:NSMonthCalendarUnit fromDate:[self dateForFirstDayInSection:0] toDate:fromSectionOfDate options:0].month;
     UICollectionViewLayoutAttributes *toAttrs = [cvLayout layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:toSection]];
     CGPoint toSectionOrigin = [self.view convertPoint:toAttrs.frame.origin fromView:cv];
 
-    [cv setContentOffset:(CGPoint) {cv.contentOffset.x, cv.contentOffset.y + (toSectionOrigin.y - fromSectionOrigin.y)}];
-
+    if ([self.collectionView.collectionViewLayout isKindOfClass:[LCDatePickerCollectionViewLayoutHorizontal class]]) {
+        // horizontal
+        [cv setContentOffset:(CGPoint) {cv.contentOffset.x + (toSectionOrigin.x - fromSectionOrigin.x), cv.contentOffset.y}];
+    } else {
+        // vertical
+        [cv setContentOffset:(CGPoint) {cv.contentOffset.x, cv.contentOffset.y + (toSectionOrigin.y - fromSectionOrigin.y)}];
+    }
 }
 
 
 - (NSDate *)dateForFirstDayInSection:(NSInteger)section
 {
-
     return [self.calendar dateByAddingComponents:((^{
         NSDateComponents *dateComponents = [NSDateComponents new];
         dateComponents.month = section;
         return dateComponents;
-    })())                                 toDate:self.firstDateOfUpperBound options:0];
-
+    })()) toDate:self.firstDateOfUpperBound options:0];
 }
 
 
@@ -723,13 +733,13 @@ static NSString *calenderHeaderCellID = @"sectionHeader";
  addition of the section. It will replace the month text into the header cell.*/
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-    if (kind == UICollectionElementKindSectionHeader || kind == LCDatePickerCollectionViewElementKindSectionHeader) {
+    if ([kind isEqual:UICollectionElementKindSectionHeader] || [kind isEqual:LCDatePickerCollectionViewElementKindSectionHeader]) {
         LCDatePickerHeaderCell *headerView = [self.collectionView dequeueReusableSupplementaryViewOfKind:kind
                                                                                      withReuseIdentifier:calenderHeaderCellID
                                                                                             forIndexPath:indexPath];
 
         headerView.currentMonthLb.text = [self.headerDateFormatter stringFromDate:[self firstDateOfMonthForSection:indexPath.section]].uppercaseString;
-
+        headerView.currentMonthLb.textAlignment = [kind isEqual:LCDatePickerCollectionViewElementKindSectionHeader] ? NSTextAlignmentCenter : NSTextAlignmentLeft;
         headerView.layer.shouldRasterize = YES;
         headerView.layer.rasterizationScale = [UIScreen mainScreen].scale;
         return headerView;
@@ -796,30 +806,34 @@ static NSString *calenderHeaderCellID = @"sectionHeader";
 
 
 # pragma mark -
-# pragma mark UICollectionViewDelegateFlowLayout
-
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)collectionViewLayout;
-//    NSInteger numberOfColumns = 7;
-//    CGFloat itemWidth = (self.collectionView.bounds.size.width / numberOfColumns) - (flowLayout.sectionInset.left + flowLayout.sectionInset.right + (flowLayout.minimumInteritemSpacing * (numberOfColumns -2)));
-//    return CGSizeMake(itemWidth, itemWidth);
-//}
-
-
-# pragma mark -
 # pragma mark UIScrollViewDelegate
 
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-//{
-//    if (scrollView.contentOffset.y < 0.0f && ! self.lowerBoundDate) {
-//        [self appendPastDates];
-//    }
-//
-//    if ((scrollView.contentOffset.y > (scrollView.contentSize.height - CGRectGetHeight(scrollView.bounds))) && ! self.upperBoundDate) {
-//        [self appendFutureDates];
-//    }
-//}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat offset;
+    CGFloat contentSize;
+    CGFloat scrollViewBounds;
+    if ([self.collectionView.collectionViewLayout isKindOfClass:[LCDatePickerCollectionViewLayoutHorizontal class]]) {
+        // horizontal layout
+        offset = scrollView.contentOffset.x;
+        contentSize = scrollView.contentSize.width / 2;
+        scrollViewBounds = CGRectGetWidth(scrollView.bounds);
+    } else {
+        // vertical layout
+        offset = scrollView.contentOffset.y;
+        contentSize = scrollView.contentSize.height;
+        scrollViewBounds = CGRectGetHeight(scrollView.bounds);
+    }
+    
+    
+    if (offset < 0.0f && !self.lowerBoundDate) {
+        [self appendPastDates];
+    }
+
+    if ((offset > (contentSize - scrollViewBounds)) && !self.upperBoundDate) {
+        [self appendFutureDates];
+    }
+}
 
 
 /* Task-12.1 : Delegate method to pop out "Today" button while scrolling starts. */

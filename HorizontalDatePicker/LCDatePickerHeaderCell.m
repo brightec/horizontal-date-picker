@@ -20,16 +20,18 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.backgroundColor = [UIColor randomColor];
+        self.backgroundColor = [UIColor clearColor];
         
         // Month name label
         _currentMonthLb = [UILabel new];
+        _currentMonthLb.textAlignment = NSTextAlignmentLeft;
         _currentMonthLb.translatesAutoresizingMaskIntoConstraints = NO;
         _currentMonthLb.font = [UIFont lowcostFontWithSize:17.0f];
         _currentMonthLb.textColor = [UIColor colorWithHex:0x808080];
-        _currentMonthLb.backgroundColor = [UIColor randomColor];
+        _currentMonthLb.backgroundColor = [UIColor clearColor];
         [self addSubview:_currentMonthLb];
         [self pinView:_currentMonthLb toEdges:BTPinnedEdgeLeading margin:12.0f];
+        [self pinView:_currentMonthLb toEdges:BTPinnedEdgeTrailing margin:12.0f];
         
         // create weekday labels
         NSDateFormatter *dateFormatter = [NSDateFormatter new];
@@ -46,7 +48,7 @@
             label.textColor = [UIColor colorWithHex:0xbababa];
             label.text = [weekDay uppercaseString];
             label.textAlignment = NSTextAlignmentCenter;
-            label.backgroundColor = [UIColor randomColor];
+            label.backgroundColor = [UIColor clearColor];
             [self addSubview:label];
             
             if (lastLabel == nil) {

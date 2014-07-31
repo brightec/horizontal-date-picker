@@ -47,7 +47,7 @@
         _defaultFont = [UIFont lowcostFontWithSize:19.0f];
         _firstLastDateFont = [UIFont lowcostMediumFontWithSize:19.0f];
         _todayFont = [UIFont lowcostMediumFontWithSize:19.0f];
-        _defaultBackgroundColor = [UIColor randomColor];
+        _defaultBackgroundColor = [UIColor clearColor];
 
         // Set a new UILabel & its properties to display on Custom Cell. */
         _dateLb = [UILabel new];

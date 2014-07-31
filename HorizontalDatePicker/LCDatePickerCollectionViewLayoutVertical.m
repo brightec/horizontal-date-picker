@@ -30,6 +30,7 @@ static CGFloat const LCHeaderHeight = 60.0f;
         self.minimumLineSpacing = LCMinLineSpacing;
         self.sectionInset = UIEdgeInsetsMake(LCInsetTop, LCInsetLeft, LCInsetBottom, LCInsetRight);
         self.headerReferenceSize = CGSizeMake(0, LCHeaderHeight);
+        self.itemSize = CGSizeMake(45.0f, 45.0f);
     }
     
     return self;

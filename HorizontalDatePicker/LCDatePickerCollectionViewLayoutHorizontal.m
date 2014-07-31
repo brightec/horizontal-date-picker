@@ -10,7 +10,8 @@
 
 
 static CGFloat const LCHeaderHeight = 60.0f;
-static CGFloat const LCItemSize = 44.0f;
+static CGFloat const LCItemSize = 40.0f;
+static CGFloat const LCContentInset = 20.0f;
 
 
 NSString *const LCDatePickerCollectionViewElementKindCell = @"LCDatePickerCollectionViewElementKindCell";
@@ -37,6 +38,67 @@ NSString *const LCDatePickerCollectionViewElementKindSectionHeader = @"LCDatePic
     return self;
 }
 
+
+# pragma mark -
+# pragma mark Helpers
+
+- (CGRect)frameForCellAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger row = indexPath.row / self.numberOfColumns;
+    NSInteger column = indexPath.row % self.numberOfColumns;
+    
+    CGFloat w = LCItemSize;
+    CGFloat h = LCItemSize;
+    CGFloat y = LCHeaderHeight + (row * h);
+    CGFloat x = column * w;
+    
+    // apply offset to cell to account for section (i.e. month)
+    x += [self offsetForIndexPath:indexPath];
+    
+    CGRect frame = CGRectMake(x, y, w, h);
+    return frame;
+}
+
+
+- (CGRect)frameForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    CGRect frame;
+    if (kind == LCDatePickerCollectionViewElementKindSectionHeader) {
+        CGFloat containerWidth = [self containerWidth];
+        
+        CGFloat w = containerWidth;
+        CGFloat h = LCHeaderHeight;
+        CGFloat y = 0;
+        CGFloat x = indexPath.section * CGRectGetWidth(frame);
+        
+        // apply offset to header to account for section (i.e. month)
+        x += [self offsetForIndexPath:indexPath];
+        
+        frame = CGRectMake(x, y, w, h);
+    }
+    return frame;
+}
+
+
+
+- (CGFloat)offsetForIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat containerWidth = [self containerWidth];
+    NSInteger page = floorf(indexPath.section / 2) + 1;
+    CGFloat offset = (indexPath.section * (containerWidth + LCContentInset)) + (page * LCContentInset);
+    return offset;
+}
+
+
+- (CGFloat)containerWidth;
+{
+    CGFloat containerWidth = (self.collectionView.bounds.size.width - (LCContentInset * 3)) / 2;
+    return containerWidth;
+}
+
+
+# pragma mark -
+# pragma mark Overrides
 
 - (CGSize)collectionViewContentSize
 {
@@ -74,34 +136,6 @@ NSString *const LCDatePickerCollectionViewElementKindSectionHeader = @"LCDatePic
     [layoutInformation setObject:cellInformation forKey:LCDatePickerCollectionViewElementKindCell];
     [layoutInformation setObject:headerInformation forKey:LCDatePickerCollectionViewElementKindSectionHeader];
     self.layoutInformation = layoutInformation;
-}
-
-
-- (CGRect)frameForCellAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSInteger row = indexPath.row / self.numberOfColumns;
-    NSInteger column = indexPath.row % self.numberOfColumns;
-    
-    CGFloat w = LCItemSize;
-    CGFloat h = LCItemSize;
-    CGFloat x = column * w;
-    x = x + (indexPath.section * (self.collectionView.bounds.size.width / 2));
-    CGFloat y = LCHeaderHeight + (row * h);
-    
-    CGRect frame = CGRectMake(x, y, w, h);
-    return frame;
-}
-
-
-- (CGRect)frameForSupplementaryViewOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
-    CGRect frame;
-    if (kind == LCDatePickerCollectionViewElementKindSectionHeader) {
-        frame.size = CGSizeMake(self.collectionView.bounds.size.width, LCHeaderHeight);
-        frame.origin.x = indexPath.section * CGRectGetWidth(frame);
-        frame.origin.y = 0;
-    }
-    return frame;
 }
 
 
